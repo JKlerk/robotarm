@@ -12,7 +12,20 @@
             robotArm.speed = 500;
             
             // Jou instructies volgen hier
-            
+            for(var i = 0; i <=7; i++){
+                robotArm.grab();
+                    color = robotArm.scan();
+                    if (color === null){
+                    } else{
+                        for(var x = 1; x <= 1+i; x++){
+                            robotArm.moveRight();
+                        }
+                        robotArm.drop();
+                        for(var x = 1; x <= 1+i; x++){
+                        robotArm.moveLeft();
+                        }
+                }
+            }
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>
